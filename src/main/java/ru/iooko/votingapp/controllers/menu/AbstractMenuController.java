@@ -9,7 +9,6 @@ import ru.iooko.votingapp.util.validation.ValidationUtil;
 @Slf4j
 public class AbstractMenuController {
 
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private MenuService service;
 
