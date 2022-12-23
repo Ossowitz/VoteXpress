@@ -10,7 +10,7 @@ import java.time.LocalTime;
 @UtilityClass
 public class ValidationUtil {
 
-    private static final LocalTime TIME_CONSTRAINT = LocalTime.of(11, 0, 0);
+    public static final LocalTime TIME_CONSTRAINT = LocalTime.of(11, 0, 0);
 
     public static <T> T checkNotFoundWithId(T object, int id) {
         checkNotFoundWithId(object != null, id);
