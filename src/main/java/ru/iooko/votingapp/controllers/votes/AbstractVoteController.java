@@ -9,7 +9,7 @@ import ru.iooko.votingapp.service.VoteService;
 import java.time.LocalTime;
 
 @Slf4j
-public class AbstractVoteController {
+public abstract class AbstractVoteController {
 
     @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired

@@ -11,7 +11,7 @@ import ru.iooko.votingapp.util.validation.ValidationUtil;
 import java.util.List;
 
 @Slf4j
-public class AbstractRestaurantController {
+public abstract class AbstractRestaurantController {
 
     @Autowired
     private RestaurantService service;

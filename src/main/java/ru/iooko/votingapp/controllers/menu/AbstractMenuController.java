@@ -7,7 +7,7 @@ import ru.iooko.votingapp.service.MenuService;
 import ru.iooko.votingapp.util.validation.ValidationUtil;
 
 @Slf4j
-public class AbstractMenuController {
+public abstract class AbstractMenuController {
 
     @Autowired
     private MenuService service;

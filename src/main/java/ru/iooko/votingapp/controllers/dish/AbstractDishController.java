@@ -9,7 +9,7 @@ import ru.iooko.votingapp.util.validation.ValidationUtil;
 import java.util.List;
 
 @Slf4j
-public class AbstractDishController {
+public abstract class AbstractDishController {
 
     @Autowired
     private DishService service;
