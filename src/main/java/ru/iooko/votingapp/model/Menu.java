@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import ru.iooko.votingapp.util.accessory.PersistableId;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -21,7 +22,7 @@ import java.util.Set;
                 name = "menu_unique_date_restaurant_idx"))
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter @Setter
-public class Menu extends AbstractBaseEntity {
+public class Menu extends AbstractBaseEntity implements PersistableId {
 
     @Column(name = "date", nullable = false, columnDefinition = "timestamp default now()", updatable = false)
     @NotNull
