@@ -1,11 +1,9 @@
 package ru.iooko.votingapp.controllers.restaurant;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.security.access.annotation.Secured;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.iooko.votingapp.dto.RestaurantDTO;
 import ru.iooko.votingapp.model.Restaurant;
 
@@ -28,5 +26,11 @@ public class RestaurantController extends AbstractRestaurantController {
     @Secured({"ROLE_ADMIN", "ROLE_USER"})
     public List<RestaurantDTO> getAllWithMenu() {
         return super.getAllWithMenu();
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable int id) {
+        super.delete(id);
     }
 }
