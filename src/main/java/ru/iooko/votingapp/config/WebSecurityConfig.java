@@ -2,8 +2,10 @@ package ru.iooko.votingapp.config;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -13,6 +15,8 @@ import ru.iooko.votingapp.repository.UserRepository;
 import ru.iooko.votingapp.util.security.AuthUser;
 
 import java.util.Optional;
+
+import static ru.iooko.votingapp.util.UserUtil.PASSWORD_ENCODER;
 
 @Slf4j
 @Configuration
@@ -36,5 +40,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     () -> new UsernameNotFoundException("User '" + email + "' was not found"))
             );
         };
+    }
+
+    @Autowired
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService())
+                .passwordEncoder(PASSWORD_ENCODER);
     }
 }
