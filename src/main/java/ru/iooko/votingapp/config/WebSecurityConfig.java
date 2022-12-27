@@ -21,4 +21,20 @@ import java.util.Optional;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final UserRepository userRepository;
+
+    /**
+     * method defines how Spring will look up users in the database.
+     *      In this case, `UserRepository` is used to search for a user by email.
+     *          If the user is not found, a `UsernameNotFoundException` exception is thrown.
+     */
+    @Bean
+    public UserDetailsService userDetailsService() {
+        return email -> {
+            log.debug("Authentication '{}'", email);
+            Optional<Users> user = userRepository.getByEmail(email);
+            return new AuthUser(user.orElseThrow(
+                    () -> new UsernameNotFoundException("User '" + email + "' was not found"))
+            );
+        };
+    }
 }
