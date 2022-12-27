@@ -15,7 +15,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
 @Secured("ROLE_ADMIN")
-@RequestMapping(value = ProfileController.REST_URL,
+@RequestMapping(value = AdminController.REST_URL,
         produces = APPLICATION_JSON_VALUE)
 public class AdminController extends AbstractUserController {
 
