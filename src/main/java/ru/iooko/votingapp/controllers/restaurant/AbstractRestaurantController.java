@@ -13,7 +13,6 @@ import java.util.List;
 @Slf4j
 public class AbstractRestaurantController {
 
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private RestaurantService service;
 
