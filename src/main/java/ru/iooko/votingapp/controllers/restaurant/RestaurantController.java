@@ -47,4 +47,10 @@ public class RestaurantController extends AbstractRestaurantController {
                 .buildAndExpand(createdRestaurant.getId()).toUri();
         return ResponseEntity.created(uri).body(createdRestaurant);
     }
+
+    @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void update(@Valid @RequestBody Restaurant restaurant, @PathVariable int id) {
+        super.update(restaurant, id);
+    }
 }
