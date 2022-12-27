@@ -8,6 +8,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import ru.iooko.votingapp.util.accessory.PersistableId;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -40,7 +41,7 @@ import java.util.Set;
 @Getter @Setter
 @NoArgsConstructor
 @ToString(callSuper = true)
-public class Restaurant extends AbstractNamedEntity {
+public class Restaurant extends AbstractNamedEntity implements PersistableId {
 
     @JsonIgnore
     @JsonBackReference // https://stackoverflow.com/questions/31319358/jsonmanagedreference-vs-jsonbackreference
