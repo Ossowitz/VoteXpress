@@ -1,5 +1,6 @@
 package ru.iooko.votingapp.web.controllers.users;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
@@ -48,5 +49,11 @@ public class AdminController extends AbstractUserController {
                 .buildAndExpand(createdUser.getId())
                 .toUri();
         return ResponseEntity.created(uri).body(createdUser);
+    }
+
+    @PutMapping(value = "/{id}", consumes = APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void update(@Valid @RequestBody Users user, @PathVariable int id) {
+        super.update(user, id);
     }
 }
