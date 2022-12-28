@@ -56,4 +56,10 @@ public class AdminController extends AbstractUserController {
     public void update(@Valid @RequestBody Users user, @PathVariable int id) {
         super.update(user, id);
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable int id) {
+        super.delete(id);
+    }
 }
