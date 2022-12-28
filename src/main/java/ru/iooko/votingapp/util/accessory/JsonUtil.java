@@ -1,4 +1,4 @@
-package ru.iooko.votingapp.util;
+package ru.iooko.votingapp.util.accessory;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;

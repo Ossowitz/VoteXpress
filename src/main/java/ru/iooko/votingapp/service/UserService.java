@@ -14,8 +14,8 @@ import ru.iooko.votingapp.util.validation.ValidationUtil;
 import java.util.List;
 
 import static org.springframework.util.Assert.notNull;
-import static ru.iooko.votingapp.util.UserUtil.prepareToSave;
-import static ru.iooko.votingapp.util.UserUtil.updateFromTo;
+import static ru.iooko.votingapp.util.accessory.UserUtil.prepareToSave;
+import static ru.iooko.votingapp.util.accessory.UserUtil.updateFromTo;
 import static ru.iooko.votingapp.util.validation.ValidationUtil.checkNotFound;
 import static ru.iooko.votingapp.util.validation.ValidationUtil.checkNotFoundWithId;
 

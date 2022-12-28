@@ -3,7 +3,7 @@ package ru.iooko.votingapp.dto;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
-import ru.iooko.votingapp.util.PersistableId;
+import ru.iooko.votingapp.util.accessory.PersistableId;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;

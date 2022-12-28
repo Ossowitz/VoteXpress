@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import ru.iooko.votingapp.util.PersistableId;
+import ru.iooko.votingapp.util.accessory.PersistableId;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;

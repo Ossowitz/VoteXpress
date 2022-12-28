@@ -18,7 +18,7 @@ import ru.iooko.votingapp.security.AuthUser;
 
 import java.util.Optional;
 
-import static ru.iooko.votingapp.util.UserUtil.PASSWORD_ENCODER;
+import static ru.iooko.votingapp.util.accessory.UserUtil.PASSWORD_ENCODER;
 
 @Slf4j
 @Configuration

@@ -3,7 +3,7 @@ package ru.iooko.votingapp.util.validation;
 import lombok.experimental.UtilityClass;
 import ru.iooko.votingapp.exception.NotFoundException;
 import ru.iooko.votingapp.exception.RequestDataException;
-import ru.iooko.votingapp.util.PersistableId;
+import ru.iooko.votingapp.util.accessory.PersistableId;
 
 import java.time.LocalTime;
 

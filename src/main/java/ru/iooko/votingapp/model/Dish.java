@@ -7,7 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import ru.iooko.votingapp.util.PersistableId;
+import ru.iooko.votingapp.util.accessory.PersistableId;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;

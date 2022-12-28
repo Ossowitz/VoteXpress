@@ -1,4 +1,4 @@
-package ru.iooko.votingapp.util;
+package ru.iooko.votingapp.util.accessory;
 
 import lombok.experimental.UtilityClass;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;

@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.iooko.votingapp.exception.VoteNotAllowedUpdateException;
 import ru.iooko.votingapp.model.Votes;
 import ru.iooko.votingapp.repository.VoteRepository;
-import ru.iooko.votingapp.util.DateTimeUtil;
+import ru.iooko.votingapp.util.accessory.DateTimeUtil;
 import ru.iooko.votingapp.util.validation.ValidationUtil;
 
 import java.time.LocalTime;
