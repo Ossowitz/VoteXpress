@@ -7,6 +7,7 @@ import lombok.Setter;
 import lombok.ToString;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import ru.iooko.votingapp.util.PersistableId;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -21,7 +22,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter @Setter
 @ToString(callSuper = true)
-public class Dish extends AbstractNamedEntity {
+public class Dish extends AbstractNamedEntity implements PersistableId {
 
     @OneToMany(mappedBy = "dish")
     @JsonIgnore

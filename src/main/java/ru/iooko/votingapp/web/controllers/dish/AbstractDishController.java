@@ -4,13 +4,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import ru.iooko.votingapp.model.Dish;
 import ru.iooko.votingapp.service.DishService;
+import ru.iooko.votingapp.util.validation.ValidationUtil;
 
 import java.util.List;
 
 @Slf4j
 public class AbstractDishController {
 
-//    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private DishService service;
 
@@ -22,5 +23,11 @@ public class AbstractDishController {
     public List<Dish> getAll() {
         log.info("getAll dish");
         return service.getAll();
+    }
+
+    public Dish create(Dish dish) {
+        log.info("create dish {}", dish);
+        ValidationUtil.checkNew(dish);
+        return service.create(dish);
     }
 }
