@@ -36,4 +36,9 @@ public class AbstractDishController {
         ValidationUtil.assureIdConsistent(dish, id);
         service.update(dish);
     }
+
+    public void delete(int id) {
+        log.info("delete dish {}", id);
+        service.delete(id);
+    }
 }
