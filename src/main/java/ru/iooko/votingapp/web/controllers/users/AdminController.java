@@ -62,4 +62,10 @@ public class AdminController extends AbstractUserController {
     public void delete(@PathVariable int id) {
         super.delete(id);
     }
+
+    @PatchMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void enable(@PathVariable int id, @RequestParam boolean enabled) {
+        super.enable(id, enabled);
+    }
 }
