@@ -1,4 +1,4 @@
-package ru.iooko.votingapp.web.controllers.dish;
+package ru.iooko.votingapp.controllers.dish;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

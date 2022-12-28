@@ -1,4 +1,4 @@
-package ru.iooko.votingapp.web.controllers.users;
+package ru.iooko.votingapp.controllers.users;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

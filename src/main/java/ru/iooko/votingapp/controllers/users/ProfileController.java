@@ -1,4 +1,4 @@
-package ru.iooko.votingapp.web.controllers.users;
+package ru.iooko.votingapp.controllers.users;
 
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;

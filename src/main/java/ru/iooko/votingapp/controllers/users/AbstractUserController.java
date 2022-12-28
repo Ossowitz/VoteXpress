@@ -1,4 +1,4 @@
-package ru.iooko.votingapp.web.controllers.users;
+package ru.iooko.votingapp.controllers.users;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
