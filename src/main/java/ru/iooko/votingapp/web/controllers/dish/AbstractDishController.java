@@ -30,4 +30,10 @@ public class AbstractDishController {
         ValidationUtil.checkNew(dish);
         return service.create(dish);
     }
+
+    public void update(Dish dish, int id) {
+        log.info("update dish {} with id {}", dish, id);
+        ValidationUtil.assureIdConsistent(dish, id);
+        service.update(dish);
+    }
 }
