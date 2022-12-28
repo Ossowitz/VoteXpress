@@ -11,13 +11,13 @@ import java.util.List;
 import java.util.Map;
 
 @UtilityClass
-public class JsonUtils {
+public class JsonUtil {
 
 //    https://habr.com/ru/companies/otus/articles/687004/#:~:text=%D0%B8%20%D0%B8%D0%B7%20%D0%BD%D0%B5%D0%B3%D0%BE.-,ObjectMapper,-ObjectMapper%20%E2%80%94%20%D0%BD%D0%B0%D0%B8%D0%B1%D0%BE%D0%BB%D0%B5%D0%B5%20%D1%87%D0%B0%D1%81%D1%82%D0%BE
     private static ObjectMapper mapper;
 
     public static void setMapper(ObjectMapper mapper) {
-        JsonUtils.mapper = mapper;
+        JsonUtil.mapper = mapper;
     }
 
     public static <T> List<T> readValues(String json, Class<T> clazz) {

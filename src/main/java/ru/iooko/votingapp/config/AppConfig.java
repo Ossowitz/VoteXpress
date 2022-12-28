@@ -6,7 +6,7 @@ import com.fasterxml.jackson.datatype.hibernate5.Hibernate5Module;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import ru.iooko.votingapp.util.JsonUtils;
+import ru.iooko.votingapp.util.JsonUtil;
 
 @Configuration
 public class AppConfig {
@@ -18,6 +18,6 @@ public class AppConfig {
 
     @Autowired
     public void objectMapper(ObjectMapper mapper) {
-        JsonUtils.setMapper(mapper);
+        JsonUtil.setMapper(mapper);
     }
 }
