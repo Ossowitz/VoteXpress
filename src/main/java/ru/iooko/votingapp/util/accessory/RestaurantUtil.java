@@ -10,7 +10,6 @@ import ru.iooko.votingapp.security.SecurityUtil;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @UtilityClass
 public class RestaurantUtil {
@@ -18,7 +17,7 @@ public class RestaurantUtil {
     public static List<RestaurantDTO> getDTOs(Collection<Restaurant> restaurantCollection) {
         return restaurantCollection.stream()
                 .map(RestaurantUtil::asTo)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public static RestaurantDTO asTo(Restaurant restaurant) {
