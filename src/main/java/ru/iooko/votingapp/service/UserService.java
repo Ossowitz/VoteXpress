@@ -1,6 +1,7 @@
 package ru.iooko.votingapp.service;
 
-import lombok.AllArgsConstructor;
+import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import ru.iooko.votingapp.dto.UsersDTO;
@@ -19,13 +20,17 @@ import static ru.iooko.votingapp.util.validation.ValidationUtil.checkNotFound;
 import static ru.iooko.votingapp.util.validation.ValidationUtil.checkNotFoundWithId;
 
 @Service("userService")
-@AllArgsConstructor
+@Scope(proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class UserService {
 
     private final UserRepository repository;
 
     // Restrict for modification
     private boolean isModificationAllowed = true;
+
+    public UserService(UserRepository repository) {
+        this.repository = repository;
+    }
 
     public Users create(Users user) {
         notNull(user, "user must not be null");
@@ -85,7 +90,7 @@ public class UserService {
         this.isModificationAllowed = true;
     }
 
-    private void checkModificationAllowed(int id) {
+    protected void checkModificationAllowed(int id) {
         // Restrict the modification
         boolean isRestrictInterval = id <= AbstractBaseEntity.START_SEQ + 10 && id >= AbstractBaseEntity.START_SEQ;
         if (isModificationAllowed && isRestrictInterval) {
