@@ -1,6 +1,5 @@
 package ru.iooko.votingapp.repository;
 
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import ru.iooko.votingapp.model.Dish;
@@ -8,10 +7,13 @@ import ru.iooko.votingapp.model.Dish;
 import java.util.List;
 
 @Repository
-@AllArgsConstructor
 public class DishRepository {
 
     private final CrudDishRepository repository;
+
+    public DishRepository(CrudDishRepository repository) {
+        this.repository = repository;
+    }
 
     @Transactional
     public Dish save(Dish dish) {

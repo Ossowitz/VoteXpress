@@ -20,7 +20,7 @@ import static ru.iooko.votingapp.util.security.SecurityUtil.*;
         produces = APPLICATION_JSON_VALUE)
 public class ProfileController extends AbstractUserController {
 
-    protected static final String REST_URL = "api/profile";
+    protected static final String REST_URL = "/api/profile";
 
     @PutMapping(consumes = APPLICATION_JSON_VALUE)
     @ResponseStatus(NO_CONTENT)

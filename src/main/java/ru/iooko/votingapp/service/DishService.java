@@ -1,6 +1,5 @@
 package ru.iooko.votingapp.service;
 
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 import ru.iooko.votingapp.model.Dish;
@@ -12,10 +11,13 @@ import static org.springframework.util.Assert.notNull;
 import static ru.iooko.votingapp.util.validation.ValidationUtil.checkNotFoundWithId;
 
 @Service("dishService")
-@AllArgsConstructor
 public class DishService {
 
     private final DishRepository repository;
+
+    public DishService(DishRepository repository) {
+        this.repository = repository;
+    }
 
     public Dish create(Dish dish) {
         Assert.notNull(dish, "dish must not be null");
