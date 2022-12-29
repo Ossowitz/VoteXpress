@@ -31,6 +31,11 @@ public abstract class AbstractBaseEntity implements Persistable<Integer> {
         return id;
     }
 
+    public int id() {
+        Assert.notNull(id, "Entity must have id");
+        return id;
+    }
+
     @JsonIgnore
     @Override
     public boolean isNew() {
