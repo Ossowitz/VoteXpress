@@ -1,19 +1,20 @@
 package ru.iooko.votingapp.web.controllers.dish;
 
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.iooko.votingapp.model.Dish;
 
+import javax.validation.Valid;
+import java.net.URI;
 import java.util.List;
 
 @RestController
 @Secured("ROLE_ADMIN")
 @RequestMapping(value = DishController.REST_URL,
-    produces = MediaType.APPLICATION_JSON_VALUE)
+        produces = MediaType.APPLICATION_JSON_VALUE)
 public class DishController extends AbstractDishController {
 
     protected static final String REST_URL = "/api/dishes";
@@ -28,4 +29,13 @@ public class DishController extends AbstractDishController {
         return super.getAll();
     }
 
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Dish> createDish(@Valid @RequestBody Dish dish) {
+        Dish createdDish = super.create(dish);
+        URI uri = ServletUriComponentsBuilder
+                .fromCurrentContextPath()
+                .path(REST_URL + "/{id}")
+                .buildAndExpand(createdDish.getId()).toUri();
+        return ResponseEntity.created(uri).body(createdDish);
+    }
 }
