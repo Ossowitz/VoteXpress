@@ -11,7 +11,6 @@ import java.util.List;
 @Slf4j
 public class AbstractDishController {
 
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private DishService service;
 
