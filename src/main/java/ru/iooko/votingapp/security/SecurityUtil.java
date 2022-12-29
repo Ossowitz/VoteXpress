@@ -1,4 +1,4 @@
-package ru.iooko.votingapp.util.security;
+package ru.iooko.votingapp.security;
 
 import lombok.experimental.UtilityClass;
 import org.springframework.security.core.Authentication;

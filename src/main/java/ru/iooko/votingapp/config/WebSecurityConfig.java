@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import ru.iooko.votingapp.model.Users;
 import ru.iooko.votingapp.repository.UserRepository;
-import ru.iooko.votingapp.util.security.AuthUser;
+import ru.iooko.votingapp.security.AuthUser;
 
 import java.util.Optional;
 

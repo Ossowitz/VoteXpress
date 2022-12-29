@@ -1,18 +1,15 @@
 package ru.iooko.votingapp.web.controllers.users;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import ru.iooko.votingapp.dto.UsersDTO;
 import ru.iooko.votingapp.model.Users;
-import ru.iooko.votingapp.util.security.SecurityUtil;
 
 import javax.validation.Valid;
 
 import static org.springframework.http.HttpStatus.*;
 import static org.springframework.http.MediaType.*;
-import static ru.iooko.votingapp.util.security.SecurityUtil.*;
+import static ru.iooko.votingapp.security.SecurityUtil.*;
 
 @RestController
 @Secured("ROLE_USER")
