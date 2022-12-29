@@ -1,5 +1,6 @@
 package ru.iooko.votingapp.web.controllers.dish;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
@@ -38,4 +39,11 @@ public class DishController extends AbstractDishController {
                 .buildAndExpand(createdDish.getId()).toUri();
         return ResponseEntity.created(uri).body(createdDish);
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable int id) {
+        super.delete(id);
+    }
+
 }
