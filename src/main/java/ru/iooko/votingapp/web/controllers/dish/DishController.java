@@ -46,4 +46,9 @@ public class DishController extends AbstractDishController {
         super.delete(id);
     }
 
+    @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void update(@Valid @RequestBody Dish dish, @PathVariable int id) {
+        super.update(dish, id);
+    }
 }
