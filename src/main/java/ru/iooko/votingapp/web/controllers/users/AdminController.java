@@ -1,9 +1,13 @@
 package ru.iooko.votingapp.web.controllers.users;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import ru.iooko.votingapp.model.Users;
 
+import javax.validation.Valid;
+import java.net.URI;
 import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
@@ -29,5 +33,20 @@ public class AdminController extends AbstractUserController {
     @GetMapping("/by")
     public Users getByMail(@RequestParam String email) {
         return super.getByMail(email);
+    }
+
+    /**
+     * allows you to create new users in a Spring application
+     *      and return information about the created user along with a URI to access it
+     */
+    @PostMapping(consumes = APPLICATION_JSON_VALUE)
+    public ResponseEntity<Users> createUser(@Valid @RequestBody Users user)  {
+        Users createdUser = super.create(user);
+        URI uri = ServletUriComponentsBuilder
+                .fromCurrentContextPath()
+                .path(REST_URL + "/{id}")
+                .buildAndExpand(createdUser.getId())
+                .toUri();
+        return ResponseEntity.created(uri).body(createdUser);
     }
 }
