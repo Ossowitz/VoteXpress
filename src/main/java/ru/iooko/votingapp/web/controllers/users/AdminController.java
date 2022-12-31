@@ -1,10 +1,7 @@
 package ru.iooko.votingapp.web.controllers.users;
 
 import org.springframework.security.access.annotation.Secured;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ru.iooko.votingapp.model.Users;
 
 import java.util.List;
@@ -27,5 +24,10 @@ public class AdminController extends AbstractUserController {
     @GetMapping("/{id}")
     public Users getByIdWithRoles(@PathVariable int id) {
         return super.getByIdWithRoles(id);
+    }
+
+    @GetMapping("/by")
+    public Users getByMail(@RequestParam String email) {
+        return super.getByMail(email);
     }
 }
