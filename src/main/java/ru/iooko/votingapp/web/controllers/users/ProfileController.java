@@ -5,6 +5,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import ru.iooko.votingapp.dto.UsersDTO;
+import ru.iooko.votingapp.model.Users;
 import ru.iooko.votingapp.util.security.SecurityUtil;
 
 import javax.validation.Valid;
@@ -27,5 +28,10 @@ public class ProfileController extends AbstractUserController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete() {
         super.delete(SecurityUtil.authUserId());
+    }
+
+    @GetMapping
+    public Users getByIdWithRoles(int id) {
+        return super.getByIdWithRoles(SecurityUtil.authUserId());
     }
 }
