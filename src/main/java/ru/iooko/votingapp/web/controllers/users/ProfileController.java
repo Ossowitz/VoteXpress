@@ -22,4 +22,10 @@ public class ProfileController extends AbstractUserController {
     public void update(@Valid @RequestBody UsersDTO userDTO) {
         super.update(userDTO, SecurityUtil.authUserId());
     }
+
+    @DeleteMapping
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete() {
+        super.delete(SecurityUtil.authUserId());
+    }
 }
