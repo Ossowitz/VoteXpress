@@ -11,6 +11,10 @@ import ru.iooko.votingapp.model.Users;
 @ToString(of = "user")
 public class AuthUser extends User {
 
+    /**
+     * represents information about a user
+     *      who has been successfully authenticated into the system
+     */
     private final Users user;
 
     public AuthUser(@NonNull Users user) {
