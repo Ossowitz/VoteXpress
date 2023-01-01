@@ -49,6 +49,11 @@ public class AbstractUserController {
         service.update(userDTO);
     }
 
+    public void delete(int id) {
+        log.info("delete {}", id);
+        service.delete(id);
+    }
+
     public Users getByMail(String email) {
         log.info("getByEmail {}", email);
         return service.getByEmail(email);
