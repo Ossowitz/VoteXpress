@@ -12,6 +12,10 @@ public class VoteRepository {
 
     private final CrudVoteRepository repository;
 
+    public Votes save(int id) {
+        return repository.getByIdWithMenuWithUser(id).orElse(null);
+    }
+
     public Votes getByIdWithMenuWithUser(int id) {
         return repository.getByIdWithMenuWithUser(id).orElse(null);
     }
