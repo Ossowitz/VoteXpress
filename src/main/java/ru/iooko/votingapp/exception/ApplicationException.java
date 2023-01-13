@@ -1,6 +1,5 @@
 package ru.iooko.votingapp.exception;
 
-import lombok.Data;
 import lombok.Getter;
 import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.http.HttpStatus;
@@ -20,4 +19,5 @@ public class ApplicationException extends ResponseStatusException {
     public String getMessage() {
         return getReason();
     }
+
 }
