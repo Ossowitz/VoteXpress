@@ -18,9 +18,7 @@ public class UserService {
 
     public Users create(Users user) {
         Assert.notNull(user, "user must not be null");
-
-        // todo: create method
-        return null;
+        return save(user);
     }
 
     // prepare user before save to db (including the encode)
