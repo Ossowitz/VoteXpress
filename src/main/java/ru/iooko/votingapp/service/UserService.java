@@ -3,6 +3,8 @@ package ru.iooko.votingapp.service;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
+import ru.iooko.votingapp.exception.NotAllowedUpdateException;
+import ru.iooko.votingapp.model.AbstractBaseEntity;
 import ru.iooko.votingapp.model.Users;
 import ru.iooko.votingapp.repository.UserRepository;
 import ru.iooko.votingapp.util.UserUtil;
@@ -19,6 +21,13 @@ public class UserService {
     public Users create(Users user) {
         Assert.notNull(user, "user must not be null");
         return save(user);
+    }
+
+    public void checkModificationAllowed(int id) {
+        // Restrict the modification
+        if (modificationAllowed && id <= AbstractBaseEntity.START_SEQ + 10 && id >= AbstractBaseEntity.START_SEQ) {
+            throw new NotAllowedUpdateException();
+        }
     }
 
     // prepare user before save to db (including the encode)
