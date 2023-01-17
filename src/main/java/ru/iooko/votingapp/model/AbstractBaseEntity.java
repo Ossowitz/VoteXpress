@@ -17,14 +17,17 @@ import java.util.Objects;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public abstract class AbstractBaseEntity implements Persistable<Integer> {
 
+    public static final int START_SEQ = 10000;
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "global_seq", sequenceName = "global_seq", allocationSize = 1, initialValue = START_SEQ)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "global_seq")
     @Schema(accessMode = Schema.AccessMode.READ_ONLY) // read-only and cannot be changed during save or update operations
     protected Integer id;
 
     @Override
     public Integer getId() {
-        Assert.notNull(id, "Entity haven't id");
+        Assert.notNull(id, "Entity must have id");
         return id;
     }
 
@@ -47,5 +50,10 @@ public abstract class AbstractBaseEntity implements Persistable<Integer> {
     @Override
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + ":" + id;
     }
 }
