@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-dish-table
+      author: your_name
+      changes:
+        - createTable:
+            tableName: dish
+            columns:
+              - column:
+                  name: id
+                  type: INTEGER
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+        - createIndex:
+            indexName: dish_unique_name_idx
+            tableName: dish
+            unique: true
+            columns:
+              - column:
+                  name: name
