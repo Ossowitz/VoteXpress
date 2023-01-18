@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
       id: create-dish-table
-      author: your_name
+      author: Ilya-Tikhomirov
       changes:
         - createTable:
             tableName: dish
