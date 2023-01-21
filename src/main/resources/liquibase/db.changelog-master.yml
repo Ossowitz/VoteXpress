@@ -2,4 +2,6 @@ databaseChangeLog:
   - include:
       file: liquibase/create-users-table.yml
   - include:
+      file: liquibase/create-role-table.yml
+  - include:
       file: liquibase/create-dish-table.yml
