@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_roles_table
+      author: Ilya-Tikhomirov
+      changes:
+        - createTable:
+            tableName: roles
+            columns:
+              - column:
+                  name: id
+                  type: INTEGER
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+            foreignKeys:
+              - foreignKey:
+                  name: fk_roles_user_id
+                  referencedTableName: users
+                  referencedColumnNames: id
+                  onDelete: CASCADE
+              - foreignKey:
+                  name: fk_roles_role_id
+                  referencedTableName: role
+                  referencedColumnNames: id
+                  onDelete: CASCADE
+        - createIndex:
+            indexName: roles_unique_user_role_idx
+            tableName: roles
+            unique: true
+            columns:
+              - column:
+                  name: user_id
+              - column:
+                  name: role_id

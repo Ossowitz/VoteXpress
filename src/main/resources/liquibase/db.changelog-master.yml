@@ -7,3 +7,5 @@ databaseChangeLog:
       file: liquibase/create-dish-table.yml
   - include:
       file: liquibase/create-restaurant-table.yml
+  - include:
+      file: liquibase/create-roles-table.yml
