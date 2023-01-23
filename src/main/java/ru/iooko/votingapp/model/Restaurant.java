@@ -1,6 +1,12 @@
 package ru.iooko.votingapp.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @NamedEntityGraphs({
@@ -24,6 +30,23 @@ import javax.persistence.*;
                 }
         )
 })
+@Table(name = "restaurant",
+        uniqueConstraints = @UniqueConstraint(columnNames = {"name"},
+                name = "restaurants_unique_name_idx"))
+@Getter @Setter
+@NoArgsConstructor
+@ToString(callSuper = true)
 public class Restaurant extends AbstractNamedEntity {
 
+
+    private Set<Menu> menues;
+
+    public Restaurant(Integer id, String name) {
+        super(id, name);
+    }
+
+    public Restaurant(Restaurant restaurant) {
+        super(restaurant.getId(), restaurant.getName());
+        this.menues = restaurant.getMenues();
+    }
 }
