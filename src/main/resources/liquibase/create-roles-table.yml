@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
-      id: create_roles_table
-      author: Ilya-Tikhomirov
+      id: create_table_roles
+      author: Ilya_Tikhomirov
       changes:
         - createTable:
             tableName: roles
@@ -13,23 +13,32 @@ databaseChangeLog:
                   constraints:
                     primaryKey: true
                     nullable: false
-            foreignKeys:
-              - foreignKey:
-                  name: fk_roles_user_id
-                  referencedTableName: users
-                  referencedColumnNames: id
-                  onDelete: CASCADE
-              - foreignKey:
-                  name: fk_roles_role_id
-                  referencedTableName: role
-                  referencedColumnNames: id
-                  onDelete: CASCADE
-        - createIndex:
-            indexName: roles_unique_user_role_idx
-            tableName: roles
-            unique: true
-            columns:
               - column:
                   name: user_id
+                  type: INTEGER
+                  constraints:
+                    nullable: false
               - column:
                   name: role_id
+                  type: INTEGER
+                  constraints:
+                    nullable: false
+            foreignKeys:
+              - foreignKey:
+                  baseColumnNames: user_id
+                  baseTableName: roles
+                  constraintName: fk_roles_user_id
+                  referencedColumnNames: id
+                  referencedTableName: users
+                  onDelete: CASCADE
+              - foreignKey:
+                  baseColumnNames: role_id
+                  baseTableName: roles
+                  constraintName: fk_roles_role_id
+                  referencedColumnNames: id
+                  referencedTableName: role
+                  onDelete: CASCADE
+        - addUniqueConstraint:
+            tableName: roles
+            constraintName: roles_unique_user_role_idx
+            columnNames: user_id, role_id
