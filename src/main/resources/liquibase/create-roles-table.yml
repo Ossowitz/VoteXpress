@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
-      id: create_table_roles
-      author: Ilya_Tikhomirov
+      id: create-table-roles
+      author: Ilya-Tikhomirov
       changes:
         - createTable:
             tableName: roles

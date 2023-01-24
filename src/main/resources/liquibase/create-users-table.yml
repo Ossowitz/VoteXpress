@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: create_table_users
+      id: create-table-users
       author: Ilya-Tikhomirov
       changes:
         - createTable:
