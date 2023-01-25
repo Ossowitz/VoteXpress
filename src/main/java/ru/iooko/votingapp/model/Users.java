@@ -11,7 +11,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
@@ -40,7 +40,7 @@ public class Users extends AbstractNamedEntity {
     @NotNull
     // should only be used when deserializing
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)
-    private Date registered = new Date();
+    private LocalDate registered = LocalDate.now();
 
     @Column(name = "enabled", nullable = false, columnDefinition = "boolean default true")
     private boolean enabled = true;
@@ -57,11 +57,11 @@ public class Users extends AbstractNamedEntity {
     private Set<Roles> roles;
 
     public Users(Integer id, String name, String email, String password) {
-        this(id, name, email, password, true, new Date());
+        this(id, name, email, password, true, LocalDate.now());
     }
 
     public Users(Integer id, String name, String email,
-                 String password, boolean enabled, Date registered) {
+                 String password, boolean enabled, LocalDate registered) {
         super(id, name);
         this.email = email;
         this.password = password;
@@ -71,7 +71,7 @@ public class Users extends AbstractNamedEntity {
 
     public Users(Integer id, String name, String email,
                  String password, boolean enabled,
-                 Date registered, Set<Roles> roles) {
+                 LocalDate registered, Set<Roles> roles) {
         super(id, name);
         this.email = email;
         this.password = password;
