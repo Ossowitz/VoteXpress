@@ -38,7 +38,6 @@ import java.util.Set;
 @ToString(callSuper = true)
 public class Restaurant extends AbstractNamedEntity {
 
-
     private Set<Menu> menues;
 
     public Restaurant(Integer id, String name) {

@@ -36,10 +36,9 @@ public class Users extends AbstractNamedEntity {
     @ToString.Exclude // should not be included in the output
     private String password;
 
-    @Column(name = "registered", nullable = false, columnDefinition = "timestamp default now()")
+    @Column(name = "registered", nullable = false, columnDefinition = "timestamp default now()", updatable = false)
     @NotNull
-    // should only be used when deserializing
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY) // should only be used when deserializing
     private LocalDate registered = LocalDate.now();
 
     @Column(name = "enabled", nullable = false, columnDefinition = "boolean default true")
