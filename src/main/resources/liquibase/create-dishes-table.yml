@@ -1,0 +1,55 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-dishes-table
+      author: Ilya-Tikhomirov
+      changes:
+        - createTable:
+            tableName: dishes
+            columns:
+              - column:
+                  name: id
+                  type: INTEGER
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: menu_id
+                  type: INTEGER
+                  nullable: false
+              - column:
+                  name: dish_id
+                  type: INTEGER
+                  nullable: false
+              - column:
+                  name: price
+                  type: INT
+                  defaultValue: 0
+                  nullable: false
+            foreignKeys:
+              - foreignKey:
+                  name: fk_dishes_menu
+                  baseTable: dishes
+                  baseColumnNames:
+                    - menu_id
+                  referencedTable: menu
+                  referencedColumnNames:
+                    - id
+                  onDelete: CASCADE
+              - foreignKey:
+                  name: fk_dishes_dish
+                  baseTable: dishes
+                  baseColumnNames:
+                    - dish_id
+                  referencedTable: dish
+                  referencedColumnNames:
+                    - id
+                  onDelete: CASCADE
+        - createIndex:
+            indexName: dishes_unique_menu_dish_idx
+            tableName: dishes
+            unique: true
+            columns:
+              - column:
+                  name: menu_id
+              - column:
+                  name: dish_id
