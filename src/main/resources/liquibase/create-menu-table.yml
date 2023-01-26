@@ -32,8 +32,8 @@ databaseChangeLog:
                   referencedColumnNames: id
                   onDelete: CASCADE
         - createIndex:
-            indexName: menu_unique_date_restaurant_idx
             tableName: menu
+            indexName: menu_unique_date_restaurant_idx
             unique: true
             columns:
               - column:

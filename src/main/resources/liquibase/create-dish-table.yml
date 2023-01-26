@@ -18,8 +18,8 @@ databaseChangeLog:
                   constraints:
                     nullable: false
         - createIndex:
-            indexName: dish_unique_name_idx
             tableName: dish
+            indexName: dish_unique_name_idx
             unique: true
             columns:
               - column:

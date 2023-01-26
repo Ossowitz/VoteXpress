@@ -45,8 +45,8 @@ databaseChangeLog:
                     - id
                   onDelete: CASCADE
         - createIndex:
-            indexName: dishes_unique_menu_dish_idx
             tableName: dishes
+            indexName: dishes_unique_menu_dish_idx
             unique: true
             columns:
               - column:

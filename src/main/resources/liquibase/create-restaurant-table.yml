@@ -18,8 +18,8 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - createIndex:
-                  indexName: restaurants_unique_name_idx
                   tableName: restaurant
+                  indexName: restaurants_unique_name_idx
                   unique: true
                   columns:
                     - column:

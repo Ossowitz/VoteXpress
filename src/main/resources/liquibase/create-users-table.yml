@@ -41,8 +41,8 @@ databaseChangeLog:
                   constraints:
                     nullable: false
         - createIndex:
-            indexName: users_unique_email_idx
             tableName: users
+            indexName: users_unique_email_idx
             unique: true
             columns:
               - column:
