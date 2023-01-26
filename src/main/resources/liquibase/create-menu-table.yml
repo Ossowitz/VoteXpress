@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: create-table-menu
+      id: create-menu-table
       author: Ilya-Tikhomirov
       changes:
         - createTable:
