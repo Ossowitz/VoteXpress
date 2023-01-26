@@ -11,3 +11,5 @@ databaseChangeLog:
       file: liquibase/create-roles-table.yml
   - include:
       file: liquibase/create-menu-table.yml
+  - include:
+      file: liquibase/create-dishes-table.yml
