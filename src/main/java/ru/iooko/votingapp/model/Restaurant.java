@@ -1,9 +1,13 @@
 package ru.iooko.votingapp.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -38,6 +42,10 @@ import java.util.Set;
 @ToString(callSuper = true)
 public class Restaurant extends AbstractNamedEntity {
 
+    @JsonIgnore
+    @JsonBackReference // https://stackoverflow.com/questions/31319358/jsonmanagedreference-vs-jsonbackreference
+    @OneToMany(mappedBy = "restaurant")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Set<Menu> menues;
 
     public Restaurant(Integer id, String name) {
