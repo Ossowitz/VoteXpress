@@ -2,6 +2,7 @@ package ru.iooko.votingapp.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -30,7 +31,7 @@ public class Menu extends AbstractBaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "restaurant_id", nullable = false)
-    @JsonBackReference // https://stackoverflow.com/questions/61840804/spring-boot-jpa-bidirectional-infinite-cycle-issue
+    @JsonManagedReference // https://stackoverflow.com/questions/61840804/spring-boot-jpa-bidirectional-infinite-cycle-issue
     private Restaurant restaurant;
 
     @OneToMany(mappedBy = "menu", cascade = CascadeType.ALL)
