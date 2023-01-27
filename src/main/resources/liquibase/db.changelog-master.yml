@@ -13,3 +13,5 @@ databaseChangeLog:
       file: liquibase/create-menu-table.yml
   - include:
       file: liquibase/create-dishes-table.yml
+  - include:
+      file: liquibase/create-votes-table.yml

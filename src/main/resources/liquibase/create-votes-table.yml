@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-votes-table
+      author: Ilya-Tikhomirov
+      changes:
+        - createTable:
+            tableName: votes
+            columns:
+              - column:
+                  name: id
+                  type: INTEGER
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: user_id
+                  type: INTEGER
+                  nullable: false
+              - column:
+                  name: menu_id
+                  type: INTEGER
+                  nullable: false
+            foreignKeys:
+              - foreignKey:
+                  name: fk_votes_menu
+                  baseTable: votes
+                  baseColumnNames:
+                    - menu_id
+                  referencedTable: menu
+                  referencedColumnNames:
+                    - id
+                  onDelete: CASCADE
+              - foreignKey:
+                  name: fk_votes_user
+                  baseTable: votes
+                  baseColumnNames:
+                    - user_id
+                  referencedTable: users
+                  referencedColumnNames:
+                    - id
+                  onDelete: CASCADE
+        - createIndex:
+            indexName: votes_unique_user_menu_idx
+            tableName: votes
+            unique: true
+            columns:
+              - column:
+                  name: user_id
+              - column:
+                  name: menu_id
