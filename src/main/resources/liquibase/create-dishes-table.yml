@@ -11,20 +11,23 @@ databaseChangeLog:
                   type: INTEGER
                   autoIncrement: true
                   constraints:
-                    primaryKey: true
+                    nullable: false
               - column:
                   name: menu_id
                   type: INTEGER
-                  nullable: false
+                  constraints:
+                    nullable: false
               - column:
                   name: dish_id
                   type: INTEGER
-                  nullable: false
+                  constraints:
+                    nullable: false
               - column:
                   name: price
                   type: INT
                   defaultValue: 0
-                  nullable: false
+                  constraints:
+                    nullable: false
             foreignKeys:
               - foreignKey:
                   name: fk_dishes_menu

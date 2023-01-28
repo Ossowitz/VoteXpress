@@ -12,8 +12,6 @@ databaseChangeLog:
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                  generatedValue:
-                    sequenceName: MENU_SEQ
               - column:
                   name: date
                   type: DATE
