@@ -18,4 +18,7 @@ public interface CrudUserRepository extends JpaRepository<Users, Integer> {
 
     @Query("FROM Users u LEFT JOIN FETCH u.roles r ")
     Optional<Users> getByEmail(@Param("email") String email);
+
+    @Query("FROM Users u LEFT JOIN FETCH u.roles r LEFT JOIN FETCH r.role WHERE u.id =: id")
+    Users getByIdWithRoles(@Param("id") int id);
 }
