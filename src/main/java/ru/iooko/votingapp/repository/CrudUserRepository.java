@@ -9,6 +9,7 @@ import ru.iooko.votingapp.model.Users;
 
 import java.util.Optional;
 
+@Transactional(readOnly = true)
 public interface CrudUserRepository extends JpaRepository<Users, Integer> {
 
     @Transactional
