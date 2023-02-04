@@ -8,6 +8,7 @@ import ru.iooko.votingapp.model.AbstractBaseEntity;
 import ru.iooko.votingapp.model.Users;
 import ru.iooko.votingapp.repository.UserRepository;
 import ru.iooko.votingapp.util.UserUtil;
+import ru.iooko.votingapp.util.validation.ValidationUtil;
 
 @Service("userService")
 @AllArgsConstructor
@@ -21,6 +22,11 @@ public class UserService {
     public Users create(Users user) {
         Assert.notNull(user, "user must not be null");
         return save(user);
+    }
+
+    public void delete(int id) {
+        checkModificationAllowed(id);
+        ValidationUtil.checkNotFoundWithId(repository.delete(id), id);
     }
 
     public void checkModificationAllowed(int id) {
