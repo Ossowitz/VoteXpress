@@ -10,6 +10,10 @@ import ru.iooko.votingapp.repository.UserRepository;
 import ru.iooko.votingapp.util.UserUtil;
 import ru.iooko.votingapp.util.validation.ValidationUtil;
 
+import static org.springframework.util.Assert.*;
+import static ru.iooko.votingapp.util.UserUtil.*;
+import static ru.iooko.votingapp.util.validation.ValidationUtil.*;
+
 @Service("userService")
 @AllArgsConstructor
 public class UserService {
@@ -20,13 +24,13 @@ public class UserService {
     private boolean modificationAllowed = true;
 
     public Users create(Users user) {
-        Assert.notNull(user, "user must not be null");
+        notNull(user, "user must not be null");
         return save(user);
     }
 
     public void delete(int id) {
         checkModificationAllowed(id);
-        ValidationUtil.checkNotFoundWithId(repository.delete(id), id);
+        checkNotFoundWithId(repository.delete(id), id);
     }
 
     public void checkModificationAllowed(int id) {
@@ -38,6 +42,6 @@ public class UserService {
 
     // prepare user before save to db (including the encode)
     private Users save(Users user) {
-        return repository.save(UserUtil.prepareToSave(user));
+        return repository.save(prepareToSave(user));
     }
 }
