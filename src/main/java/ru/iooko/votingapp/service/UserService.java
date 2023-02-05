@@ -33,6 +33,10 @@ public class UserService {
         checkNotFoundWithId(repository.delete(id), id);
     }
 
+    public Users get(int id) {
+        return getWithCheckNotFoundWithId(repository.get(id), id);
+    }
+
     public void checkModificationAllowed(int id) {
         // Restrict the modification
         if (modificationAllowed && id <= AbstractBaseEntity.START_SEQ + 10 && id >= AbstractBaseEntity.START_SEQ) {
