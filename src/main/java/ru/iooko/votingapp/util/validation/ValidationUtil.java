@@ -11,7 +11,7 @@ public class ValidationUtil {
     private static final LocalTime TIME_CONSTRAINT = LocalTime.of(11, 0, 0);
 
     public static <T> T getWithCheckNotFoundWithId(T object, int id) {
-        checkNotFoundWithId(object != null, id);
+        getWithCheckNotFoundWithId(object != null, id);
         return object;
     }
 
@@ -21,7 +21,7 @@ public class ValidationUtil {
         }
     }
 
-    public static void checkNotFoundWithId(boolean found, int id) {
+    public static void getWithCheckNotFoundWithId(boolean found, int id) {
         checkNotFound(found, "id=" + id);
     }
 }
