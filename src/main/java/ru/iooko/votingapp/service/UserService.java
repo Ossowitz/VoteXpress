@@ -3,6 +3,7 @@ package ru.iooko.votingapp.service;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.iooko.votingapp.dto.UsersDTO;
 import ru.iooko.votingapp.exception.NotAllowedUpdateException;
 import ru.iooko.votingapp.model.AbstractBaseEntity;
 import ru.iooko.votingapp.model.Users;
@@ -58,16 +59,30 @@ public class UserService {
         user.setEnabled(enabled);
     }
 
-    public void checkModificationAllowed(int id) {
-        // Restrict the modification
-        boolean isRestrictInterval = id <= AbstractBaseEntity.START_SEQ + 10 && id >= AbstractBaseEntity.START_SEQ;
-        if (isModificationAllowed && isRestrictInterval) {
-            throw new NotAllowedUpdateException();
-        }
+    @Transactional
+    public void update(Users user) {
+        notNull(user, "user must not be null");
+        checkModificationAllowed(user.getId());
+        save(user);
+    }
+
+    @Transactional
+    public void update(UsersDTO userDTO) {
+        checkModificationAllowed(userDTO.getId());
+        Users user = get(userDTO.getId());
+        save(updateFromTo(user, userDTO));
     }
 
     // prepare user before save to db (including the encode)
     private Users save(Users user) {
         return repository.save(prepareToSave(user));
+    }
+
+    private void checkModificationAllowed(int id) {
+        // Restrict the modification
+        boolean isRestrictInterval = id <= AbstractBaseEntity.START_SEQ + 10 && id >= AbstractBaseEntity.START_SEQ;
+        if (isModificationAllowed && isRestrictInterval) {
+            throw new NotAllowedUpdateException();
+        }
     }
 }
