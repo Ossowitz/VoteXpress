@@ -2,13 +2,14 @@ package ru.iooko.votingapp.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Assert;
 import ru.iooko.votingapp.exception.NotAllowedUpdateException;
 import ru.iooko.votingapp.model.AbstractBaseEntity;
 import ru.iooko.votingapp.model.Users;
 import ru.iooko.votingapp.repository.UserRepository;
-import ru.iooko.votingapp.util.UserUtil;
 import ru.iooko.votingapp.util.validation.ValidationUtil;
+
+import java.util.List;
+import java.util.Optional;
 
 import static org.springframework.util.Assert.*;
 import static ru.iooko.votingapp.util.UserUtil.*;
@@ -30,11 +31,23 @@ public class UserService {
 
     public void delete(int id) {
         checkModificationAllowed(id);
-        checkNotFoundWithId(repository.delete(id), id);
+        ValidationUtil.getWithCheckNotFoundWithId(repository.delete(id), id);
     }
 
     public Users get(int id) {
         return getWithCheckNotFoundWithId(repository.get(id), id);
+    }
+
+    public Users getByIdWithRoles(int id) {
+        return repository.getByIdWithRoles(id);
+    }
+
+    public Optional<Users> getByEmail(String email) {
+        return repository.getByEmail(email);
+    }
+
+    public List<Users> getAll() {
+        return repository.getAll();
     }
 
     public void checkModificationAllowed(int id) {
