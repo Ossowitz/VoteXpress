@@ -2,6 +2,7 @@ package ru.iooko.votingapp.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ru.iooko.votingapp.exception.NotAllowedUpdateException;
 import ru.iooko.votingapp.model.AbstractBaseEntity;
 import ru.iooko.votingapp.model.Users;
@@ -48,6 +49,13 @@ public class UserService {
 
     public List<Users> getAll() {
         return repository.getAll();
+    }
+
+    @Transactional
+    public void enableUser(int id, boolean enabled) {
+        checkModificationAllowed(id);
+        Users user = get(id);
+        user.setEnabled(enabled);
     }
 
     public void checkModificationAllowed(int id) {
