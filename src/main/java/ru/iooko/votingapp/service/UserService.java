@@ -23,7 +23,7 @@ public class UserService {
     private final UserRepository repository;
 
     // Restrict for modification
-    private boolean modificationAllowed = true;
+    private boolean isModificationAllowed = true;
 
     public Users create(Users user) {
         notNull(user, "user must not be null");
@@ -60,7 +60,8 @@ public class UserService {
 
     public void checkModificationAllowed(int id) {
         // Restrict the modification
-        if (modificationAllowed && id <= AbstractBaseEntity.START_SEQ + 10 && id >= AbstractBaseEntity.START_SEQ) {
+        boolean isRestrictInterval = id <= AbstractBaseEntity.START_SEQ + 10 && id >= AbstractBaseEntity.START_SEQ;
+        if (isModificationAllowed && isRestrictInterval) {
             throw new NotAllowedUpdateException();
         }
     }
