@@ -33,11 +33,11 @@ public class UserService {
 
     public void delete(int id) {
         checkModificationAllowed(id);
-        ValidationUtil.getWithCheckNotFoundWithId(repository.delete(id), id);
+        ValidationUtil.checkNotFoundWithId(repository.delete(id), id);
     }
 
     public Users get(int id) {
-        return getWithCheckNotFoundWithId(repository.get(id), id);
+        return checkNotFoundWithId(repository.get(id), id);
     }
 
     public Users getByIdWithRoles(int id) {
