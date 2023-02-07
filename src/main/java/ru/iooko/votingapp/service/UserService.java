@@ -73,6 +73,14 @@ public class UserService {
         save(updateFromTo(user, userDTO));
     }
 
+    public void switchOfModificationRestriction() {
+        this.isModificationAllowed = false;
+    }
+
+    public void switchOnModificationRestriction() {
+        this.isModificationAllowed = true;
+    }
+
     // prepare user before save to db (including the encode)
     private Users save(Users user) {
         return repository.save(prepareToSave(user));
