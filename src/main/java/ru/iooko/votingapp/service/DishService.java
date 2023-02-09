@@ -7,6 +7,8 @@ import ru.iooko.votingapp.model.Dish;
 import ru.iooko.votingapp.repository.DishRepository;
 import ru.iooko.votingapp.util.validation.ValidationUtil;
 
+import java.util.List;
+
 import static org.springframework.util.Assert.*;
 import static ru.iooko.votingapp.util.validation.ValidationUtil.*;
 
@@ -27,5 +29,14 @@ public class DishService {
 
     public Dish get(int id) {
         return checkNotFoundWithId(repository.get(id), id);
+    }
+
+    public List<Dish> getAll() {
+        return repository.getAll();
+    }
+
+    public Dish update(Dish dish) {
+        notNull(dish, "dish must not be null");
+        return checkNotFoundWithId(repository.save(dish), dish.getId());
     }
 }
