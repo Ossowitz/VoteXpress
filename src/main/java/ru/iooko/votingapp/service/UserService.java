@@ -52,25 +52,22 @@ public class UserService {
         return repository.getAll();
     }
 
-    @Transactional
-    public void enableUser(int id, boolean enabled) {
-        checkModificationAllowed(id);
-        Users user = get(id);
-        user.setEnabled(enabled);
-    }
-
-    @Transactional
     public void update(Users user) {
         notNull(user, "user must not be null");
         checkModificationAllowed(user.getId());
         save(user);
     }
 
-    @Transactional
     public void update(UsersDTO userDTO) {
         checkModificationAllowed(userDTO.getId());
         Users user = get(userDTO.getId());
         save(updateFromTo(user, userDTO));
+    }
+
+    public void enableUser(int id, boolean enabled) {
+        checkModificationAllowed(id);
+        Users user = get(id);
+        user.setEnabled(enabled);
     }
 
     // prepare user before save to db (including the encode)
