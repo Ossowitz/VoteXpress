@@ -2,7 +2,7 @@ package ru.iooko.votingapp.service;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.Assert;
 import ru.iooko.votingapp.dto.UsersDTO;
 import ru.iooko.votingapp.exception.NotAllowedUpdateException;
 import ru.iooko.votingapp.model.AbstractBaseEntity;
@@ -11,11 +11,12 @@ import ru.iooko.votingapp.repository.UserRepository;
 import ru.iooko.votingapp.util.validation.ValidationUtil;
 
 import java.util.List;
-import java.util.Optional;
 
-import static org.springframework.util.Assert.*;
-import static ru.iooko.votingapp.util.UserUtil.*;
-import static ru.iooko.votingapp.util.validation.ValidationUtil.*;
+import static org.springframework.util.Assert.notNull;
+import static ru.iooko.votingapp.util.UserUtil.prepareToSave;
+import static ru.iooko.votingapp.util.UserUtil.updateFromTo;
+import static ru.iooko.votingapp.util.validation.ValidationUtil.checkNotFound;
+import static ru.iooko.votingapp.util.validation.ValidationUtil.checkNotFoundWithId;
 
 @Service("userService")
 @AllArgsConstructor
@@ -44,8 +45,9 @@ public class UserService {
         return repository.getByIdWithRoles(id);
     }
 
-    public Optional<Users> getByEmail(String email) {
-        return repository.getByEmail(email);
+    public Users getByEmail(String email) {
+        Assert.notNull(email, "email must not be null");
+        return checkNotFound(repository.getByEmail(email).orElse(null), "email=" + email);
     }
 
     public List<Users> getAll() {
@@ -54,13 +56,13 @@ public class UserService {
 
     public void update(Users user) {
         notNull(user, "user must not be null");
-        checkModificationAllowed(user.getId());
+        checkModificationAllowed(user.id());
         save(user);
     }
 
     public void update(UsersDTO userDTO) {
-        checkModificationAllowed(userDTO.getId());
-        Users user = get(userDTO.getId());
+        checkModificationAllowed(userDTO.id());
+        Users user = get(userDTO.id());
         save(updateFromTo(user, userDTO));
     }
 
