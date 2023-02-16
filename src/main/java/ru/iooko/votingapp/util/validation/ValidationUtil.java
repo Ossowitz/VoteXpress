@@ -1,7 +1,9 @@
 package ru.iooko.votingapp.util.validation;
 
 import lombok.experimental.UtilityClass;
+import org.springframework.data.domain.Persistable;
 import ru.iooko.votingapp.exception.NotFoundException;
+import ru.iooko.votingapp.exception.RequestDataException;
 
 import java.time.LocalTime;
 
@@ -23,5 +25,11 @@ public class ValidationUtil {
 
     public static void checkNotFoundWithId(boolean found, int id) {
         checkNotFound(found, "id=" + id);
+    }
+
+    public static void checkNew(Persistable<Integer> object) {
+        if (!object.isNew()) {
+            throw new RequestDataException(object + " must be new, so id = null");
+        }
     }
 }
