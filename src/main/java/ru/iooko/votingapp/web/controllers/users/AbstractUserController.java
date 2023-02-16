@@ -47,4 +47,14 @@ public class AbstractUserController {
         ValidationUtil.assureIdConsistent(userDTO, id);
         service.update(userDTO);
     }
+
+    public Users getByMail(String email) {
+        log.info("getByEmail {}", email);
+        return service.getByEmail(email);
+    }
+
+    public void enable(int id, boolean enabled) {
+        log.info(enabled ? "enable {}" : "disable {}", id);
+        service.enableUser(id, enabled);
+    }
 }
