@@ -33,8 +33,11 @@ public class ValidationUtil {
         }
     }
 
-//    public static void assureIdConsistent(Persistable<Integer> object, int id) {
-//        if (object.isNew()) {
-//        }
-//    }
+    public static void assureIdConsistent(PersistableId object, int id) {
+        if (object.isNew()) {
+            object.setId(id);
+        } else if (object.id() != id) {
+            throw new RequestDataException(object + " must be with id = " + id);
+        }
+    }
 }
