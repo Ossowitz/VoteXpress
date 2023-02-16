@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import ru.iooko.votingapp.util.PersistableId;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -20,7 +21,7 @@ import java.util.Set;
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class Users extends AbstractNamedEntity {
+public class Users extends AbstractNamedEntity implements PersistableId {
 
     @Column(name = "email", nullable = false, unique = true)
     @Email
