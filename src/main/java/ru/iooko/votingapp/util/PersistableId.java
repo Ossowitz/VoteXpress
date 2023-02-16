@@ -8,6 +8,8 @@ public interface PersistableId extends Persistable<Integer> {
     @Override
     Integer getId();
 
+    void setId(Integer id);
+
     @Override
     @JsonIgnore
     default boolean isNew() {
