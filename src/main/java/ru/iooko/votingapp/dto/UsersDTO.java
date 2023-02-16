@@ -3,6 +3,7 @@ package ru.iooko.votingapp.dto;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.Value;
+import ru.iooko.votingapp.util.PersistableId;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -11,7 +12,7 @@ import javax.validation.constraints.Size;
 @Value
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class UsersDTO extends AbstractNamedDTO {
+public class UsersDTO extends AbstractNamedDTO implements PersistableId {
 
     @Email
     @NotBlank
