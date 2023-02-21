@@ -1,4 +1,4 @@
-package ru.iooko.votingapp.util;
+package ru.iooko.votingapp.util.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
