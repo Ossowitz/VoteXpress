@@ -1,21 +1,20 @@
 package ru.iooko.votingapp.web.controllers.users;
 
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import ru.iooko.votingapp.dto.UsersDTO;
 import ru.iooko.votingapp.model.Users;
 import ru.iooko.votingapp.service.UserService;
-import ru.iooko.votingapp.util.validation.ValidationUtil;
 
 import java.util.List;
 
 import static ru.iooko.votingapp.util.validation.ValidationUtil.*;
 
 @Slf4j
-@AllArgsConstructor
 public class AbstractUserController {
 
-    private final UserService service;
+    @Autowired
+    private UserService service;
 
     public Users get(int id) {
         log.info("get {}", id);
