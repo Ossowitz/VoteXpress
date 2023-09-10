@@ -21,5 +21,5 @@ public interface CrudRestaurantRepository extends JpaRepository<Restaurant, Inte
 
     @EntityGraph(value = "allJoined", type = EntityGraph.EntityGraphType.LOAD)
     @Query("SELECT r FROM Restaurant r LEFT JOIN r.menues m ON m.date = ?1 ORDER BY r.name")
-    List<Restaurant> findAllRestaurantWithMenuWithDishesWithVolesByDateIsNow(LocalDate today);
+    List<Restaurant> findAllRestaurantWithMenuWithDishesWithVotesByDateIsNow(LocalDate today);
 }
