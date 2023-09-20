@@ -23,7 +23,7 @@ import org.springframework.context.annotation.Configuration;
                 description = "VoteXpress",
                 contact = @Contact(url = "https://github.com/Ossowitz/VoteXpress",
                         name = "Ilya Tikhomirov",
-                        email = "https://t.me/DispatcherServlet")
+                        email = "76myxomor76@gmail.com")
         ),
         security = @SecurityRequirement(name = "basicAuth")
 )
