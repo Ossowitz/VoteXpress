@@ -1,3 +1,8 @@
+server.servlet:
+  encoding:
+    charset: UTF-8 # Charset of HTTP requests and responses. Added to the "Content-Type" header if not set explicitly
+    enabled: true # Enable http encoding support
+    force: true
 server:
   port: 8082
 
@@ -11,10 +16,21 @@ spring:
 #    url: jdbc:postgresql://localhost:5432/library
 #    username: historyweed
 #    password: pass
+  jackson:
+    visibility:
+      field: any
+      getter: none
+      setter: none
+      is-getter: none
   datasource:
     url: jdbc:h2:file:./db
     username: sa
     password:
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
   jpa:
     properties:
       hibernate:
@@ -26,3 +42,9 @@ spring:
   h2:
     console:
       enabled: true
+logging:
+  level:
+    root: WARN
+    ru.iooko.votingapp: DEBUG
+    org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver: DEBUG
+#    org.springframework.security: DEBUG
