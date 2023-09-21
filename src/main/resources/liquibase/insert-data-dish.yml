@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-data-dish
+      author: Ilya-Tikhomirov
+      changes:
+        - insert:
+            tableName: DISH
+            columns:
+              - column:
+                  name: NAME
+                  value: 'Салат'
+              - column:
+                  name: NAME
+                  value: 'Суп'
+              - column:
+                  name: NAME
+                  value: 'Гарнир'
+              - column:
+                  name: NAME
+                  value: 'Котлета'
+              - column:
+                  name: NAME
+                  value: 'Булочка'
+              - column:
+                  name: NAME
+                  value: 'Компот'
+              - column:
+                  name: NAME
+                  value: 'Чай'
+              - column:
+                  name: NAME
+                  value: 'Кофе'
