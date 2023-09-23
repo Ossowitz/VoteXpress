@@ -1,0 +1,60 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-data-menu
+      author: Ilya-Tikhomirov
+      changes:
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: MENU
+            columns:
+              - column:
+                  name: DATE
+                  valueComputed: TODAY
+              - column:
+                  name: RESTAURANT_ID
+                  valueNumeric: 10000
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: MENU
+            columns:
+              - column:
+                  name: DATE
+                  valueComputed: TODAY
+              - column:
+                  name: RESTAURANT_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: MENU
+            columns:
+              - column:
+                  name: DATE
+                  valueComputed: TODAY
+              - column:
+                  name: RESTAURANT_ID
+                  valueNumeric: 10002
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: MENU
+            columns:
+              - column:
+                  name: DATE
+                  valueComputed: TODAY
+              - column:
+                  name: RESTAURANT_ID
+                  valueNumeric: 10003
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: MENU
+            columns:
+              - column:
+                  name: DATE
+                  valueComputed: TODAY
+              - column:
+                  name: RESTAURANT_ID
+                  valueNumeric: 10004
