@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-data-restaurant
+      author: Ilya-Tikhomirov
+      changes:
+        - insert:
+            tableName: RESTAURANT
+            columns:
+              - column:
+                  name: NAME
+                  value: 'Радуга'
+              - column:
+                  name: NAME
+                  value: '555'
+              - column:
+                  name: NAME
+                  value: 'Юнга'
+              - column:
+                  name: NAME
+                  value: 'Уральские пельмени'
+              - column:
+                  name: NAME
+                  value: 'Суши Hari'
+              - column:
+                  name: NAME
+                  value: 'Матрешка'
