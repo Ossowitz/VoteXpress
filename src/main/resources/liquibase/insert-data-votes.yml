@@ -1,0 +1,275 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-data-votes
+      author: Ilya-Tikhomirov
+      changes:
+        - insert:
+            tableName: VOTES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10001
+              - column:
+                  name: MENU_ID
+                  valueNumeric: 10000
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10002
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10000
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10003
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10000
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10004
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10000
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10005
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10000
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10006
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10001
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10007
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10001
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10008
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10001
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10009
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10002
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10010
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10002
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10001
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10006
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10002
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10006
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10003
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10006
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10004
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10006
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10005
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10006
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10006
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10007
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10007
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10007
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10008
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10007
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10009
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10008
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10010
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10008
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10001
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10012
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10002
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10012
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10003
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10012
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10004
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10012
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10005
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10012
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10006
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10013
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10007
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10013
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10008
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10013
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10009
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10014
+              - insert:
+                  tableName: VOTES
+                  columns:
+                    - column:
+                        name: USER_ID
+                        valueNumeric: 10010
+                    - column:
+                        name: MENU_ID
+                        valueNumeric: 10014
