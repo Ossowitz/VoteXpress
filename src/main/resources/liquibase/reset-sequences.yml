@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: reset-sequences
+      author: Ilya-Tikhomirov
+      changes:
+        - sql:
+            dbms: postgresql
+            endDelimiter: ';'
+            sql: |
+              ALTER SEQUENCE ROLES_SEQ RESTART WITH 10000;
+              ALTER SEQUENCE dishes_seq RESTART WITH 10000;
+              ALTER SEQUENCE votes_seq RESTART WITH 10000;
+              ALTER SEQUENCE menu_seq RESTART WITH 10000;
+              ALTER SEQUENCE users_seq RESTART WITH 10000;
+              ALTER SEQUENCE role_seq RESTART WITH 10000;
+              ALTER SEQUENCE dish_seq RESTART WITH 10000;
+              ALTER SEQUENCE restaurant_seq RESTART WITH 10000;
