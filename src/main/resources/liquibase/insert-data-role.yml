@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-data-role
+      author: Ilya-Tikhomirov
+      changes:
+        - insert:
+            tableName: ROLE
+            columns:
+              - column:
+                  name: NAME
+                  value: 'ADMIN'
+              - column:
+                  name: NAME
+                  value: 'USER'
