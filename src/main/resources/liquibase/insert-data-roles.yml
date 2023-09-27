@@ -1,0 +1,247 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-data-roles
+      author: Ilya-Tikhomirov
+      changes:
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10000
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10000
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10000
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10001
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10002
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10003
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10004
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10005
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10006
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10007
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10008
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10009
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10010
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10011
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10012
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10013
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10014
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10015
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10016
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10017
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10018
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10019
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
+        - insert:
+            catalogName: null
+            schemaName: public
+            tableName: ROLES
+            columns:
+              - column:
+                  name: USER_ID
+                  valueNumeric: 10020
+              - column:
+                  name: ROLE_ID
+                  valueNumeric: 10001
