@@ -15,3 +15,21 @@ databaseChangeLog:
       file: liquibase/create-dishes-table.yml
   - include:
       file: liquibase/create-votes-table.yml
+  - include:
+      file: liquibase/reset-sequences.yml
+  - include:
+      file: liquibase/insert-data-role.yml
+  - include:
+      file: liquibase/insert-data-users.yml
+  - include:
+      file: liquibase/insert-data-dish.yml
+  - include:
+      file: liquibase/insert-data-restaurant.yml
+  - include:
+      file: liquibase/insert-data-roles.yml
+  - include:
+      file: liquibase/insert-data-menu.yml
+  - include:
+      file: liquibase/insert-data-dishes.yml
+  - include:
+      file: liquibase/insert-data-votes.yml
